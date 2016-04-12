@@ -1,5 +1,6 @@
 import time
-
+import json
+import datetime
 __author__ = 'admin'
 import requests
 start=time.clock()
@@ -14,8 +15,8 @@ headers = {
     }
 
 response = requests.request("GET", url, headers=headers, params=querystring)
-
-print(response.text)
+print datetime.datetime.now()
+print json.loads(response.text)['data']['stockinfo']['auctionPrice']
 
 
 end=time.clock()

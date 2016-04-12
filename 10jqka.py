@@ -19,7 +19,7 @@ def getStockDealData(stockCode):
         None
 if __name__ == '__main__':
    start=time.clock()
-   getStockDealData("600000")
+   getStockDealData("sz000670")
    end=time.clock()
    print end-start
 
