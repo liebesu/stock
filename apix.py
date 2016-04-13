@@ -15,17 +15,19 @@ def stock():
         'content-type': "application/json",
         'apix-key': "2583488c206b4d2e654d9db7add7fdab"
         }
-    relprice=0
+
     response = requests.request("GET", url, headers=headers, params=querystring)
-    print datetime.datetime.now()
+
     price=json.loads(response.text)['data']['stockinfo']['auctionPrice']
 
     if relprice!=price:
+        print datetime.datetime.now()
         print price
         relprice=price
 
-    end=time.clock()
-    print end-start
+        end=time.clock()
+        print end-start
 if __name__=="__main__":
-    for i in range(10000):
+    relprice=0
+    for i in range(100000):
         stock()
